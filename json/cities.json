@@ -1,0 +1,290 @@
+{
+    "cities" : [
+        {
+            "city_name": "Iasi",
+            "streets": [
+                {
+                    "street_name": "Bulevardul Constantin Alexandru Rosetti",
+                    "number": 24,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Tudor Vladimirescu",
+                    "number": 24,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Calea Chisinaului",
+                    "number": 28,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Tutora",
+                    "number": 28,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Primaverii",
+                    "number": 28,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Nicolina",
+                    "number": 248,
+                    "street_color": "green"
+                }, 
+                {
+                    "street_name": "Bulevardul Dimitrie Cantemir",
+                    "number": 59,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Nicolae Iorga",
+                    "number": 28, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Palat",
+                    "number": 259,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Silvestru",
+                    "number": 28,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Strapungerea Silvestru",
+                    "number": 28, 
+                    "street_color": "green"
+                }, 
+                {
+                    "street_name": "Bulevardul Independentei",
+                    "number": 27,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Pacurari",
+                    "number": 17,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Carol I",
+                    "number": 30, 
+                    "street_color": "green"
+                }
+            ],
+            "weather": "sunny"
+        },
+        {
+            "city_name": "Targu Ocna",
+            "streets":[
+                {
+                    "street_name": "Strada Costache Negri",
+                    "number": 10,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Capitan Busila",
+                    "number": 11,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Salinei",
+                    "number": 12,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Republicii",
+                    "number": 13,
+                    "street_color": "green"
+                }
+            ],
+            "weather": "sunny"
+        },
+        {
+            "city_name": "Brasov",
+            "streets": [
+                {
+                    "street_name": "Calea Bucuresti",
+                    "number": 1,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Muncii",
+                    "number": 6,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul 15 Noiembrie",
+                    "number": "1E",
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Eroilor",
+                    "number": "1E",
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Calea Poienii",
+                    "number": "1E",
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Iuliu Maniu",
+                    "number": "1E",
+                    "street_color": "green"
+                }, 
+                {
+                    "street_name": "Mihail Kogalniceanu",
+                    "number": 1,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Grivitei",
+                    "number": 1, 
+                    "street_color": "green"
+                }
+            ],
+            "weather": "sunny"
+        },
+        {
+            "city_name": "Cluj-Napoca",
+            "streets": [
+                {
+                    "street_name": "Bulevardul Muncii",
+                    "number": 13,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Horea",
+                    "number": "1F",
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul 21 Decembrie 1989",
+                    "number": 1,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Regele Ferdinand",
+                    "number": "1F",
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Piata Unirii",
+                    "number": 1,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Eroilor",
+                    "number": 81,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Napoca",
+                    "number": 60, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Calea Motilor",
+                    "number": 60, 
+                    "street_color": "green"
+                }
+            ],
+            "weather": "sunny"
+        },
+        {
+            "city_name": "Timisoara",
+            "streets": [
+                {
+                    "street_name": "Strada Simion Barnutiu",
+                    "number": 6,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Take Ionescu",
+                    "number": 70, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Oituz",
+                    "number": 6,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Calea Alexandru Ioan Cuza",
+                    "number": 70, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Calea Circumvalatiunii",
+                    "number": 70,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Strada Gheorghe Lazar",
+                    "number": 59,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Calea Aradului",
+                    "number": 671, 
+                    "street_color": "green"
+                }
+            ],
+            "weather": "sunny"
+        },
+        {
+            "city_name": "Bucuresti",
+            "streets": [
+                {
+                    "street_name": "Bulevardul Carol I",
+                    "number": 60,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Nicolae Balcescu",
+                    "number": 1, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Regina Elisabeta",
+                    "number": 81,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Ion C. Bratianu",
+                    "number": 85, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Piata Unirii",
+                    "number": 70, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Unirii",
+                    "number": 81, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Dimitrie Cantemir",
+                    "number": 5,
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Bulevardul Regina Maria",
+                    "number": 70, 
+                    "street_color": "green"
+                },
+                {
+                    "street_name": "Splaiul Independentei",
+                    "number": 81,
+                    "street_color": "green"
+                }
+            ],
+            "weather": "sunny"
+        }
+    ]
+}

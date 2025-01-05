@@ -1,0 +1,11 @@
+{ "clientId": 1, "clientSocket": 3, "speed": 56.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": false, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 67.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": true, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 56.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": true, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 78.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": true, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 67.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": true, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 67.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": true, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 67.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": false, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 90.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": true, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 60.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": false, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 89.0, "accidentsReports": true, "eventReports": false, "gasStationsReports": true, "weatherReports": true }
+{ "clientId": 1, "clientSocket": 3, "speed": 52.0, "accidentsReports": true, "eventReports": true, "gasStationsReports": false, "weatherReports": true }
