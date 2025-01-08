@@ -9,6 +9,7 @@
 #include "data/gasStations.cpp"
 #include "data/weather.cpp"
 #include "data/accidents.cpp"
+#include "data/events.cpp"
 
 #define PORT 1168
 #define MAX_CONNECTIONS 20
@@ -98,6 +99,11 @@ void *handleClientCommunication(void *arg) {
             handleAccidentsReports(client_socket, buffer);
 
             continue; // Skip the rest of the logic for this message
+        }
+
+        if (strncmp(buffer, "Event ", 6) == 0) {
+            handleEventReports(client_socket, buffer);
+            continue;
         }
 
         if (strcmp(buffer, "Sunny") == 0 || strcmp(buffer, "Rainy") == 0 ||

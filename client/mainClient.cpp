@@ -13,6 +13,7 @@
 #include "options/saveClientData.cpp"
 #include "weather/handleWeatherChange.cpp"
 #include "accidents/handleAccidentsReports.cpp"
+#include "events/handleEvents.cpp"
 
 #define PORT 1168
 #define SERVER_IP "127.0.0.1"
@@ -140,7 +141,7 @@ int main() {
             } else if (reportChoice == 2) {
                 reportWeatherChange(client_socket);
             } else if (reportChoice == 3) {
-                reportMessage = "Event report";
+                reportEvent(client_socket);
             } else if (reportChoice == 4) {
                 reportGasPriceChange(client_socket);
             } else if (reportChoice == 5) {
