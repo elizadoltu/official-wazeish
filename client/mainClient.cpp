@@ -7,16 +7,15 @@
 #include <unistd.h>
 #include <json-c/json.h>
 #include <algorithm>
+#include <cstdlib> // For rand() and srand()
+#include <ctime>   // For time()
+
 #include "options/saveClientData.cpp"
 #include "weather/handleWeatherChange.cpp"
+#include "accidents/handleAccidentsReports.cpp"
 
 #define PORT 1168
 #define SERVER_IP "127.0.0.1"
-
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <unistd.h>
 
 void reportGasPriceChange(int client_socket) {
     std::cout << "\n=== Reporting Gas Price Change ===\n";
@@ -48,9 +47,17 @@ void reportGasPriceChange(int client_socket) {
     }
 }
 
+int generateRandomClientId() {
+    // Generate a random client ID between 1000 and 9999
+    return 1000 + (std::rand() % 9000);
+}
+
 int main() {
     int client_socket;
     struct sockaddr_in server_addr;
+
+    // Seed the random number generator
+    std::srand(std::time(nullptr));
 
     // Create socket
     client_socket = socket(AF_INET, SOCK_STREAM, 0);
@@ -74,9 +81,10 @@ int main() {
 
     std::cout << "Connected to server.\n";
 
-    int clientId = 1; // Example client ID (increment for multiple clients)
-
     while (true) {
+        int clientId = generateRandomClientId();
+        std::cout << "\nGenerated Client ID: " << clientId << "\n";
+
         std::cout << "\n=== User Registration ===\n";
         std::string city;
         double speed;
@@ -114,7 +122,6 @@ int main() {
                 std::cout << "Server response: " << responseBuffer << std::endl;
             }
 
-
             std::cout << "\n=== Reporting Menu ===\n";
             std::cout << "What would you like to report?\n";
             std::cout << "1. Accident\n";
@@ -129,7 +136,7 @@ int main() {
 
             std::string reportMessage;
             if (reportChoice == 1) {
-                reportMessage = "Accident report";
+                reportAccidents(client_socket);
             } else if (reportChoice == 2) {
                 reportWeatherChange(client_socket);
             } else if (reportChoice == 3) {
@@ -155,9 +162,6 @@ int main() {
         if (choice == 'n' || choice == 'N') {
             break;
         }
-
-        // Increment client ID for the next user
-        clientId++;
     }
 
     // Close the socket

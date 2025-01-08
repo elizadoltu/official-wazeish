@@ -8,6 +8,7 @@
 #include <fstream>
 #include "data/gasStations.cpp"
 #include "data/weather.cpp"
+#include "data/accidents.cpp"
 
 #define PORT 1168
 #define MAX_CONNECTIONS 20
@@ -21,20 +22,50 @@ int globalClientId = 0;
 pthread_mutex_t idMutex = PTHREAD_MUTEX_INITIALIZER; 
 
 void saveDataToFile(const char *jsonData) {
-    // Open the JSON file for appending
-    std::ofstream file("users.json", std::ios::app);
+    // Read the existing JSON file into a json_object
+    std::ifstream fileIn("users.json");
+    json_object *jsonArray;
 
-    if (!file.is_open()) {
-        std::cerr << "Error opening users.json file for writing!" << std::endl;
+    if (fileIn.is_open()) {
+        std::string content((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
+        if (!content.empty()) {
+            jsonArray = json_tokener_parse(content.c_str());
+            if (!jsonArray || !json_object_is_type(jsonArray, json_type_array)) {
+                jsonArray = json_object_new_array(); // Create a new array if parsing fails
+            }
+        } else {
+            jsonArray = json_object_new_array(); // Create a new array if file is empty
+        }
+        fileIn.close();
+    } else {
+        jsonArray = json_object_new_array(); // Create a new array if file doesn't exist
+    }
+
+    // Parse the incoming JSON data
+    json_object *newUser = json_tokener_parse(jsonData);
+    if (newUser == NULL) {
+        std::cerr << "Failed to parse JSON data!" << std::endl;
         return;
     }
 
-    // Write the received JSON data to the file
-    file << jsonData << std::endl;
+    // Add the new user data to the array
+    json_object_array_add(jsonArray, newUser);
 
-    file.close();
-    std::cout << "User data saved to users.json: " << jsonData << std::endl;
+    // Write the updated array back to the file with indentation
+    std::ofstream fileOut("users.json");
+    if (!fileOut.is_open()) {
+        std::cerr << "Error opening users.json file for writing!" << std::endl;
+        return;
+    }
+    fileOut << json_object_to_json_string_ext(jsonArray, JSON_C_TO_STRING_PRETTY);
+    fileOut.close();
+
+    std::cout << "User data saved to users.json with indentation: " << json_object_to_json_string_ext(jsonArray, JSON_C_TO_STRING_PRETTY) << std::endl;
+
+    // Free the json_object memory
+    json_object_put(jsonArray);
 }
+
 
 void *handleClientCommunication(void *arg) {
     struct ClientInServer *clientInfo = (struct ClientInServer *)arg;
@@ -54,6 +85,21 @@ void *handleClientCommunication(void *arg) {
 
         buffer[bytes_received] = '\0'; // Null-terminate the received data
         std::cout << "Received data from client: " << buffer << std::endl;
+        if (strncmp(buffer, "Street ", 7) == 0) {
+            // Extract the street name
+            std::string fullMessage(buffer);
+            std::string streetName = fullMessage.substr(7); // Get the substring after "Street "
+            
+            // Print the extracted street name
+            std::cout << "Extracted Street Name: " << streetName << std::endl;
+
+            // You can process the street name further here, e.g., save it to a file or database
+            std::string response = "Received street name: " + streetName;
+            handleAccidentsReports(client_socket, buffer);
+
+            continue; // Skip the rest of the logic for this message
+        }
+
         if (strcmp(buffer, "Sunny") == 0 || strcmp(buffer, "Rainy") == 0 ||
     strcmp(buffer, "Snowy") == 0 || strcmp(buffer, "Windy") == 0)
  {
