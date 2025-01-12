@@ -1,0 +1,29 @@
+[
+  {
+    "clientId":4,
+    "clientSocket":3,
+    "speed":67.0,
+    "accidentsReports":true,
+    "eventReports":true,
+    "gasStationsReports":false,
+    "weatherReports":false
+  },
+  {
+    "clientId":5,
+    "clientSocket":3,
+    "speed":67.0,
+    "accidentsReports":true,
+    "eventReports":true,
+    "gasStationsReports":false,
+    "weatherReports":false
+  },
+  {
+    "clientId":6,
+    "clientSocket":3,
+    "speed":90.0,
+    "accidentsReports":true,
+    "eventReports":false,
+    "gasStationsReports":false,
+    "weatherReports":true
+  }
+]
